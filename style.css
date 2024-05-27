@@ -1,0 +1,78 @@
+body{
+    background-color: black;
+}
+h1{
+    font-size: 10em;
+    text-align: center;
+    color: peachpuff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-size: 2em;
+    color: peachpuff
+}
+
+h4{
+    font-size: 2em;
+    color: peachpuff;
+}
+
+nav a{
+    font-size: 3em;
+    padding: 1em;
+    color: peachpuff;
+    background-color:rgb(84, 82, 82);
+    text-decoration: none;
+}
+
+div img{
+    width: 30%;
+    object-fit: none;
+}
+
+.texte{
+    margin: 5%;
+    padding: 5%;
+    background-color: rgb(84, 82, 82);
+    width: 80%;
+}
+
+#conteneur_projets_etudes{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    padding: 5%;
+    background-color: rgb(84, 82, 82);
+    width: 80%;
+}
+
+#conteneur_projets_etudes div{
+    display: flex;
+    flex-direction: column;
+}
+
+#conteneur_projets_etudes div p{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#conteneur_texte_projets_etudes{
+    display: flex;
+    flex-direction: column;
+}
+
+#conteneur_projets_etudes img{
+    size: 10%;
+}
+
