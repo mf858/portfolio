@@ -1,118 +1,233 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" name="author" content="Baptiste Mabit">
-        <title>Portfolio Baptiste Mabit</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="competences.html">Compétences</a>
-            <a href="formation.html">Formation</a>
-            <a href="contacts.html">Contacts</a>
-        </nav>
-        <h1>Compétences</h1>
-        <h3>Projets d'étude</h3>
-        <div id="conteneur_projets_etudes">
-            <img src="images/sudoku.jpeg" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 1</h4>
-                <p>Création d'un jeu de Sudoku en langage C</p>
-                <p>Compétence : Etre capable de programmer un programme simple en respectant les règles du sudoku et en utilisant les differentes structures du langage C.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: #2d5f3f;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d5f3f;
+            font-size: 3em;
+            margin-bottom: 60px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .competence {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .competence.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .glass-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .glass-card h2 {
+            color: #2d5f3f;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .glass-card p {
+            color: #3d6f4f;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+
+            .competence,
+            .competence.reverse {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .glass-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="experiences.html">Expériences professionnelles</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Mes Compétences</h1>
+
+        <div class="competence">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Développement Web">
+            </div>
+            <div class="glass-card">
+                <h2>Développement Web</h2>
+                <p>Création de sites web modernes et responsives avec HTML, CSS et JavaScript. Maîtrise des frameworks populaires et des meilleures pratiques du développement front-end pour offrir des expériences utilisateur exceptionnelles.</p>
             </div>
         </div>
 
-        <div id="conteneur_projets_etudes">
-            <img src="images/algo.jpg" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 2</h4>
-                <p>Création d'algorithmes en C pour la résolution du sudoku</p>
-                <p>Compétence : Etre capable d'imaginer des algorithmes de résolution et de les implémenter en C.</p>
+        <div class="competence reverse">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Design UI/UX">
+            </div>
+            <div class="glass-card">
+                <h2>Design UI/UX</h2>
+                <p>Conception d'interfaces utilisateur intuitives et attrayantes. Expertise en design thinking et en création de prototypes interactifs pour améliorer l'engagement et la satisfaction des utilisateurs.</p>
             </div>
         </div>
 
-        <div id="conteneur_projets_etudes">
-            <img src="images/documentation.png" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 3</h4>
-                <p>Production d'un systeme pour automatiser la documentation de programmes en C</p>
-                <p>Compétence : Etre capable de générer une documentation automatique d'un programme en C grace à un script PHP.</p>
+        <div class="competence">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600" alt="Gestion de Projet">
+            </div>
+            <div class="glass-card">
+                <h2>Gestion de Projet</h2>
+                <p>Planification et coordination efficace des projets avec méthodologies agiles. Capacité à gérer des équipes multidisciplinaires et à livrer des résultats dans les délais impartis.</p>
             </div>
         </div>
 
-        <div id="conteneur_projets_etudes">
-            <img src="images/bdd.png" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 4</h4>
-                <p>Création d'un diagramme UML et d'une base de donnée à partir du programme national du BUT</p>
-                <p>Compétence : Etre capable de créer une base de données à partir d'un texte complexe.</p>
+        <div class="competence reverse">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Programmation">
+            </div>
+            <div class="glass-card">
+                <h2>Programmation</h2>
+                <p>Développement d'applications robustes et scalables avec plusieurs langages de programmation. Expertise en résolution de problèmes complexes et en optimisation de la performance.</p>
             </div>
         </div>
 
-        <div id="conteneur_projets_etudes">
-            <img src="images/web.jpg" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 5</h4>
-                <p>Création d'un site web pour repondre à la demande d'un client</p>
-                <p>Compétence : Etre capable de créer un site web à partir d'un cahier des charges.</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/rse.jpg" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 6</h4>
-                <p>Analyse de la RSE de l'entreprise Schneider</p>
-                <p>Compétence : Etre capable d'analyser la RSE d'une entreprise française ou étrangère grâce à des recherches sur internet.</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/java.png" alt="image" id="java">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 7</h4>
-                <p>Réalisation d'une application en java depuis un cahier des charges</p>
-                <p>Compétence : Etre capable de créer une application avec javafx pour répondre aux demandes d'un client</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/algo.jpg" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 8</h4>
-                <p>Recherche d'algorithmes pour résoudre le problème des 8 dames</p>
-                <p>Compétence : Etre capable d'imaginer et de mettre en place des systemes de resolution en Python.</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/serveur.png" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 9</h4>
-                <p>Simulation d'une installation serveur sur une machine virtuelle</p>
-                <p>Compétence : Etre capable d'installer un serveur Apache pour stocker des pages web et sécuriser des documents.</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/bdd.png" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 10</h4>
-                <p>Exploitation d'une base de données afin d'analyser des statistiques</p>
-                <p>Compétence : Etre capable de peupler une base de données grâce à des fichiers csv puis de l'exploiter afin d'en tirer des statistiques.</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/projet.png" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 11</h4>
-                <p>Gestion d'un projet, répartition des tâches entre les membres de l'equipe et diagramme de Gantt</p>
-                <p>Compétence : Etre capable de gérer efficacement un projet avec les membre d'une équipe pour être plus efficace.</p>
-            </div>
-        </div>
-        <div id="conteneur_projets_etudes">
-            <img src="images/teambuilding.jfif" alt="image">
-            <div id="conteneur_texte_projets_etudes">
-                <h4>Projet 12</h4>
-                <p>Création d'un évènement de team building et de toute la communication autour : flyer, vidéo...</p>
-                <p>Compétence : Etre capable de créer un évenement de team building et de communiquer autour.</p>
-            </div>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
