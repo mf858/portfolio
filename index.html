@@ -26,6 +26,40 @@
             align-items: center;
             text-align: center;
             padding: 40px 20px;
+            position: relative;
+        }
+
+        .btn-cv {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #2d5f3f;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 1s ease-out 0.5s backwards;
+        }
+
+        .btn-cv:hover {
+            background: rgba(255, 255, 255, 0.45);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-cv::before {
+            content: "📄";
+            font-size: 1.2em;
         }
 
         .nom-principal {
@@ -91,6 +125,100 @@
         #competences {
             min-height: 100vh;
             padding: 100px 20px 40px;
+        }
+
+        #contact {
+            min-height: 100vh;
+            padding: 100px 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .contact-title {
+            text-align: center;
+            color: #2d5f3f;
+            font-size: 3em;
+            margin-bottom: 60px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(10px);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(45, 95, 63, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            color: #2d5f3f;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.9em;
+            color: #3d6f4f;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            font-size: 1.3em;
+            color: #2d5f3f;
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: #2d5f3f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #1a3a28;
         }
 
         nav {
@@ -229,9 +357,34 @@
                 font-size: 3em;
             }
 
+            .btn-cv {
+                top: 20px;
+                right: 20px;
+                font-size: 0.9em;
+                padding: 12px 20px;
+            }
+
             .navigation-accueil a {
                 font-size: 1.1em;
                 padding: 15px 30px;
+            }
+
+            .contact-title {
+                font-size: 2em;
+            }
+
+            .contact-card {
+                padding: 30px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .contact-value {
+                font-size: 1.1em;
             }
 
             nav ul {
@@ -261,11 +414,11 @@
 </head>
 <body>
     <section id="accueil">
+        <a href="documents/CV_mabit_baptiste.pdf" download class="btn-cv">Télécharger CV</a>
         <h1 class="nom-principal">Baptiste Mabit</h1>
         <div class="navigation-accueil">
             <a href="competences.html">Compétences</a>
-            <a href="experiences.html">Expériences professionnelles</a>
+            <a href="experiences.html">Formation / Expériences</a>
             <a href="contacts.html">Contact</a>
         </div>
     </section>
-</body>
